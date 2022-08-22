@@ -1,0 +1,68 @@
+body{
+    font-family: 'Kanit', sans-serif;
+    background: #ddd;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 350px;
+    background: white;
+    padding: 30px 50px;
+    overflow: hidden;
+    border-radius: 50px;
+    box-shadow: 5px 10px 5px #ccc;
+}
+.tabs{
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.tabs > div{
+    width: 15%;
+    text-align: center;
+    color: rgb(97, 95, 95);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 18px;
+    outline: none;
+}
+.tabs > div.active{
+    color: #00acee;
+}
+.tabs > div.active::after{
+    content: 'div';
+    color: #00acee;
+    position: relative;
+    width: 12%;
+    height: 3px;
+    background-color: #00acee;
+    left: 0;
+    border-radius: 5px;
+    transition: all;
+}
+
+.content{
+    position: relative;
+    height: 600px;
+    padding: 20px;
+    font-size: 20px;
+}  
+.content > div {
+    position: absolute;
+    top: -200%;
+    opacity: 0;
+    margin-top: 5px;
+    transform: scale(0.9);
+    transition: 
+        opacity 500ms ease-in-out 0ms,
+        transform 500ms ease-in-out 0ms;
+}
+.content > div.active{
+    top: 0%;
+    opacity: 1;
+    transform: scale(1);
+    margin-top: 0;
+}
